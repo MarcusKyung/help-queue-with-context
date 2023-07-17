@@ -7,8 +7,8 @@ import { ThemeContext, themes } from "./../context/theme-context";
 function App(){
   const [theme, setTheme] = useState(themes.light);
 
-  document.body.style.backgroundColor = theme.backgroundColor; // new code!
-  document.body.style.color = theme.textColor; // new code!
+  document.body.style.backgroundColor = theme.backgroundColor; 
+  document.body.style.color = theme.textColor; 
 
   function toggleTheme() {
     setTheme(theme => 
@@ -19,8 +19,9 @@ function App(){
   return (
     <ThemeContext.Provider value={theme}>
       <Header />
-      <ThemeContext.Consumer>
-        {contextTheme => <ToggleTheme theme={contextTheme} toggleTheme={toggleTheme}/>}
+      <ThemeContext.Consumer> 
+        {contextTheme => <ToggleTheme theme={contextTheme} toggleTheme={toggleTheme}/> }
+        {/* //Method1 */}
       </ThemeContext.Consumer>      
       <TicketControl />
     </ThemeContext.Provider>
